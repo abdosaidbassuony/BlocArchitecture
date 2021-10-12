@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:fanoos/utils/theme/app_theme.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:fanoos/ui/screen/home_screen.dart';
+import 'package:fanoos/ui/screen/main_page.dart';
 
 import 'generated/l10n.dart';
 
@@ -17,7 +17,6 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [],
       child: BlocBuilder(
-
         /// bloc builder for handle change language state
         /// should create LanguageBloc first then handle change language state
         builder: (BuildContext context, state) {
@@ -33,7 +32,7 @@ class MyApp extends StatelessWidget {
             ],
             routes: {},
             supportedLocales: S.delegate.supportedLocales,
-            home: MainPage(title: 'Flutter Demo Home Page'),
+            home: MainPage(),
           );
         },
       ),
