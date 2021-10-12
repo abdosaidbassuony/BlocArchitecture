@@ -16,6 +16,7 @@ class AppTheme {
   /// The Dark Theme
   ThemeData get themeDataDark {
     return ThemeData(
+        bottomNavigationBarTheme: bottomNavigationBarTheme,
         textTheme: txtThemeDark,
         brightness: Brightness.dark,
         primaryColor: ColorSchema.PRIMARY_COLOR,
@@ -25,8 +26,11 @@ class AppTheme {
 
   AppBarTheme appBarTheme = AppBarTheme(
       backgroundColor: ColorSchema.PRIMARY_COLOR,
-      titleTextStyle: TextStyle(color: ColorSchema.TEXT_COLOR,fontSize: 16),
+      titleTextStyle: TextStyle(color: ColorSchema.TEXT_COLOR, fontSize: 16),
       centerTitle: false);
+
+  BottomNavigationBarThemeData bottomNavigationBarTheme =
+      BottomNavigationBarThemeData(selectedItemColor: ColorSchema.GREEN_COLOR,backgroundColor: ColorSchema.GREEN_COLOR);
 
   /// The Text Theme For Light Theme
   TextTheme txtThemeLight = TextTheme(
