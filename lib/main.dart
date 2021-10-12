@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
             ],
             routes: {},
             supportedLocales: S.delegate.supportedLocales,
-            home: MyHomePage(title: 'Flutter Demo Home Page'),
+            home: MainPage(title: 'Flutter Demo Home Page'),
           );
         },
       ),
