@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 
+import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
+
 import 'package:fanoos/base/widget/base_stateful_widget.dart';
 import 'package:fanoos/ui/screen/category_screen.dart';
 import 'package:fanoos/ui/screen/home_screen.dart';
+import 'package:fanoos/res/assets_path.dart';
+import 'package:fanoos/res/color_schema.dart';
 
 class MainPage extends BaseStatefulWidget {
   MainPage({Key? key}) : super(key: key);
@@ -13,34 +17,96 @@ class MainPage extends BaseStatefulWidget {
 
 class _MainPageState extends BaseState<MainPage> {
   final PageStorageBucket bucket = PageStorageBucket();
-  int _selectedIndex = 0;
   final List<Widget> pages = [
-    HomeScreen(
-      key: PageStorageKey('HomeScreen'),
-    ),
-    CategoryScreen(
-      key: PageStorageKey('CategoryScreen'),
-    ),
+    HomeScreen(),
+    CategoryScreen(),
+    HomeScreen(),
+    CategoryScreen(),
+    CategoryScreen(),
   ];
+  PersistentTabController _controller =
+      PersistentTabController(initialIndex: 0);
 
   @override
   Widget baseBuild(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: _bottomNavigationBar(_selectedIndex),
-      body: PageStorage(
-        child: pages[_selectedIndex],
-        bucket: bucket,
+    return PersistentTabView(
+      context,
+      controller: _controller,
+      screens: pages,
+      items: _navBarsItems(),
+      confineInSafeArea: true,
+      backgroundColor: Colors.white,
+      // Default is Colors.white.
+      handleAndroidBackButtonPress: true,
+      // Default is true.
+      resizeToAvoidBottomInset: true,
+      // This needs to be true if you want to move up the screen when keyboard appears. Default is true.
+      stateManagement: true,
+      // Default is true.
+      hideNavigationBarWhenKeyboardShows: true,
+      // Recommended to set 'resizeToAvoidBottomInset' as true while using this argument. Default is true.
+      decoration: NavBarDecoration(
+        adjustScreenBottomPaddingOnCurve: true,
+        colorBehindNavBar: Colors.white,
       ),
+      popAllScreensOnTapOfSelectedTab: true,
+      popActionScreens: PopActionScreensType.all,
+      itemAnimationProperties: ItemAnimationProperties(
+        // Navigation Bar's items animation properties.
+        duration: Duration(milliseconds: 200),
+        curve: Curves.ease,
+      ),
+      screenTransitionAnimation: ScreenTransitionAnimation(
+        // Screen transition animation on change of selected tab.
+        animateTabTransition: true,
+        curve: Curves.ease,
+        duration: Duration(milliseconds: 200),
+      ),
+      padding: NavBarPadding.only(top: 0, bottom: 0),
+      navBarStyle:
+          NavBarStyle.simple, // Choose the nav bar style with this property.
     );
   }
 
-  Widget _bottomNavigationBar(int selectedIndex) => BottomNavigationBar(
-        onTap: (int index) => setState(() => _selectedIndex = index),
-        currentIndex: selectedIndex,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home Page'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.category), label: 'Category Page'),
-        ],
-      );
+  List<PersistentBottomNavBarItem> _navBarsItems() {
+    return [
+      PersistentBottomNavBarItem(
+        icon: Image.asset(selectedHomeIcon),
+        inactiveIcon: Image.asset(unSelectedHomeIcon),
+        title: ("Home"),
+        activeColorPrimary: ColorSchema.SECONDARY_COLOR,
+        inactiveColorPrimary: ColorSchema.SECONDARY_COLOR,
+      ),
+      PersistentBottomNavBarItem(
+        icon: Image.asset(selectedCategoryIcon),
+        inactiveIcon: Image.asset(unSelectedCategoryIcon),
+        title: ("Category"),
+        activeColorPrimary: ColorSchema.SECONDARY_COLOR,
+        inactiveColorPrimary: ColorSchema.SECONDARY_COLOR,
+      ),
+      PersistentBottomNavBarItem(
+        icon: Image.asset(selectedShopIcon),
+        inactiveIcon: Image.asset(unSelectedShopIcon),
+        title: ("Shops"),
+        activeColorPrimary: ColorSchema.SECONDARY_COLOR,
+        inactiveColorPrimary: ColorSchema.SECONDARY_COLOR,
+      ),
+      PersistentBottomNavBarItem(
+        icon: Image.asset(selectedCartIcon),
+        inactiveIcon: Image.asset(unselectedCartIcon),
+        title: ("Cart"),
+        activeColorPrimary: ColorSchema.SECONDARY_COLOR,
+        inactiveColorPrimary: ColorSchema.SECONDARY_COLOR,
+      ),
+      PersistentBottomNavBarItem(
+        icon: Image.asset(
+          unSelectedAccountIcon,
+        ),
+        inactiveIcon: Image.asset(unSelectedAccountIcon),
+        title: ("Account"),
+        activeColorPrimary: ColorSchema.SECONDARY_COLOR,
+        inactiveColorPrimary: ColorSchema.SECONDARY_COLOR,
+      ),
+    ];
+  }
 }
