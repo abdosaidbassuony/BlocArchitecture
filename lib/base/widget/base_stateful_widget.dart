@@ -14,8 +14,8 @@ abstract class BaseStatefulWidget extends StatefulWidget {
   BaseState baseCreateState();
 }
 
-mixin BaseState<W extends BaseStatefulWidget>
-    implements State<W>, LoadingManager {
+abstract class BaseState<W extends BaseStatefulWidget> extends State<W>
+    with LoadingManager {
   @override
   Widget build(BuildContext context) {
     return baseWidget();

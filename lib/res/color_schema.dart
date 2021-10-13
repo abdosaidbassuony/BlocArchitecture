@@ -10,4 +10,5 @@ class ColorSchema {
   static const LIGHT_GRAY_BACKGROUND_COLOR = Color(0xFFF6F6F6);
   static const GREEN_COLOR = Color(0xFF2DE86B);
   static const RED_COLOR = Color(0xFFFF2D52);
+  static const TEXT_COLOR = Color(0xFF21212B);
 }

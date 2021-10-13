@@ -16,6 +16,7 @@ class AppTheme {
   /// The Dark Theme
   ThemeData get themeDataDark {
     return ThemeData(
+        bottomNavigationBarTheme: bottomNavigationBarTheme,
         textTheme: txtThemeDark,
         brightness: Brightness.dark,
         primaryColor: ColorSchema.PRIMARY_COLOR,
@@ -24,19 +25,26 @@ class AppTheme {
   }
 
   AppBarTheme appBarTheme = AppBarTheme(
-      titleTextStyle: TextStyle(color: Color(0xFF21212B)), centerTitle: false);
+      backgroundColor: ColorSchema.PRIMARY_COLOR,
+      titleTextStyle: TextStyle(color: ColorSchema.TEXT_COLOR, fontSize: 16),
+      centerTitle: false);
+
+  BottomNavigationBarThemeData bottomNavigationBarTheme =
+      BottomNavigationBarThemeData(selectedItemColor: ColorSchema.GREEN_COLOR,backgroundColor: ColorSchema.GREEN_COLOR);
 
   /// The Text Theme For Light Theme
   TextTheme txtThemeLight = TextTheme(
     button: TextStyle(
       color: Colors.white,
     ),
-    bodyText1: TextStyle(fontWeight: FontWeight.bold, color: Color(0xFF21212B)),
-    headline5: TextStyle(fontWeight: FontWeight.bold, color: Color(0xFF21212B)),
-    subtitle2: TextStyle(color: Color(0xFF21212B)),
-    headline4: TextStyle(color: Color(0xFF21212B)),
-    headline3: TextStyle(color: Color(0xFF21212B)),
-    headline6: TextStyle(color: Color(0xFF21212B)),
+    bodyText1:
+        TextStyle(fontWeight: FontWeight.bold, color: ColorSchema.TEXT_COLOR),
+    headline5:
+        TextStyle(fontWeight: FontWeight.bold, color: ColorSchema.TEXT_COLOR),
+    subtitle2: TextStyle(color: ColorSchema.TEXT_COLOR),
+    headline4: TextStyle(color: ColorSchema.TEXT_COLOR),
+    headline3: TextStyle(color: ColorSchema.TEXT_COLOR),
+    headline6: TextStyle(color: ColorSchema.TEXT_COLOR),
   );
 
   /// The Text Theme For Dark Theme
