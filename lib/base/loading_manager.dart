@@ -1,6 +1,6 @@
+import 'package:fanoos/utils/shared_widget/widgets.dart';
 import 'package:flutter/material.dart';
 
-import 'package:fanoos/utils/ui/widgets.dart';
 
 mixin LoadingManager {
   void runChangeState();

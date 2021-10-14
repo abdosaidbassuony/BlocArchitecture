@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 import 'package:fanoos/base/widget/base_stateful_widget.dart';
-import 'package:fanoos/ui/screen/category_screen.dart';
-import 'package:fanoos/ui/screen/home_screen.dart';
+import 'package:fanoos/ui/category_screen.dart';
+import 'package:fanoos/ui/home_screen.dart';
 import 'package:fanoos/res/assets_path.dart';
 import 'package:fanoos/res/color_schema.dart';
 
@@ -71,38 +71,38 @@ class _MainPageState extends BaseState<MainPage> {
   List<PersistentBottomNavBarItem> _navBarsItems() {
     return [
       PersistentBottomNavBarItem(
-        icon: Image.asset(selectedHomeIcon),
-        inactiveIcon: Image.asset(unSelectedHomeIcon),
+        icon: Image.asset(ImagePathsKey.selectedHomeIcon),
+        inactiveIcon: Image.asset(ImagePathsKey.unSelectedHomeIcon),
         title: ("Home"),
         activeColorPrimary: ColorSchema.SECONDARY_COLOR,
         inactiveColorPrimary: ColorSchema.SECONDARY_COLOR,
       ),
       PersistentBottomNavBarItem(
-        icon: Image.asset(selectedCategoryIcon),
-        inactiveIcon: Image.asset(unSelectedCategoryIcon),
+        icon: Image.asset(ImagePathsKey.selectedCategoryIcon),
+        inactiveIcon: Image.asset(ImagePathsKey.unSelectedCategoryIcon),
         title: ("Category"),
         activeColorPrimary: ColorSchema.SECONDARY_COLOR,
         inactiveColorPrimary: ColorSchema.SECONDARY_COLOR,
       ),
       PersistentBottomNavBarItem(
-        icon: Image.asset(selectedShopIcon),
-        inactiveIcon: Image.asset(unSelectedShopIcon),
+        icon: Image.asset(ImagePathsKey.selectedShopIcon),
+        inactiveIcon: Image.asset(ImagePathsKey.unSelectedShopIcon),
         title: ("Shops"),
         activeColorPrimary: ColorSchema.SECONDARY_COLOR,
         inactiveColorPrimary: ColorSchema.SECONDARY_COLOR,
       ),
       PersistentBottomNavBarItem(
-        icon: Image.asset(selectedCartIcon),
-        inactiveIcon: Image.asset(unselectedCartIcon),
+        icon: Image.asset(ImagePathsKey.selectedCartIcon),
+        inactiveIcon: Image.asset(ImagePathsKey.unselectedCartIcon),
         title: ("Cart"),
         activeColorPrimary: ColorSchema.SECONDARY_COLOR,
         inactiveColorPrimary: ColorSchema.SECONDARY_COLOR,
       ),
       PersistentBottomNavBarItem(
         icon: Image.asset(
-          unSelectedAccountIcon,
+          ImagePathsKey.unSelectedAccountIcon,
         ),
-        inactiveIcon: Image.asset(unSelectedAccountIcon),
+        inactiveIcon: Image.asset(ImagePathsKey.unSelectedAccountIcon),
         title: ("Account"),
         activeColorPrimary: ColorSchema.SECONDARY_COLOR,
         inactiveColorPrimary: ColorSchema.SECONDARY_COLOR,

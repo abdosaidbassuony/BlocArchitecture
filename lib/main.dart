@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:fanoos/utils/theme/app_theme.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:fanoos/ui/screen/main_page.dart';
+import 'package:fanoos/ui/main_page.dart';
 
 import 'generated/l10n.dart';
 

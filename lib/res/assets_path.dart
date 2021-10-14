@@ -1,12 +1,19 @@
-const String defaultAssets = 'assets/images/';
-const String selectedHomeIcon = defaultAssets + 'ic_selected_home.png';
-const String unSelectedHomeIcon = defaultAssets + 'ic_unselected_home.png';
-const String selectedCategoryIcon = defaultAssets + 'ic_selected_category.png';
-const String unSelectedCategoryIcon =
-    defaultAssets + 'ic_unselected_category.png';
-const String selectedCartIcon = defaultAssets + 'ic_selected_cart.png';
-const String unselectedCartIcon = defaultAssets + 'ic_unselected_cart.png';
-const String unSelectedAccountIcon =
-    defaultAssets + 'ic_unselected_account.png';
-const String selectedShopIcon = defaultAssets + 'ic_selected_shops.png';
-const String unSelectedShopIcon = defaultAssets + 'ic_unselected_shops.png';
+class ImagePathsKey {
+  static const String DEFAULT_ASSET = 'assets/images/';
+  static const String selectedHomeIcon = DEFAULT_ASSET + 'ic_selected_home.png';
+  static const String unSelectedHomeIcon =
+      DEFAULT_ASSET + 'ic_unselected_home.png';
+  static const String selectedCategoryIcon =
+      DEFAULT_ASSET + 'ic_selected_category.png';
+  static const String unSelectedCategoryIcon =
+      DEFAULT_ASSET + 'ic_unselected_category.png';
+  static const String selectedCartIcon = DEFAULT_ASSET + 'ic_selected_cart.png';
+  static const String unselectedCartIcon =
+      DEFAULT_ASSET + 'ic_unselected_cart.png';
+  static const String unSelectedAccountIcon =
+      DEFAULT_ASSET + 'ic_unselected_account.png';
+  static const String selectedShopIcon =
+      DEFAULT_ASSET + 'ic_selected_shops.png';
+  static const String unSelectedShopIcon =
+      DEFAULT_ASSET + 'ic_unselected_shops.png';
+}

@@ -1,0 +1,1 @@
+/// map login event to state to handle login screen state and business logic for login
