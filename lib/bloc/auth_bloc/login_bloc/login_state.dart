@@ -1,0 +1,1 @@
+/// create state that fit with login scenario business and shared_widget state
